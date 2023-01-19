@@ -9,6 +9,9 @@ jobs:
     steps:
       - name: purge lfs
         run: brew uninstall git-lfs
-
+        
+      - name: clone trunk-io/plugins at bad ref
+        run: git clone -b sam/requires-lfs-test https://github.com/trunk-io/plugins
+        
       - name: checkout
         run: git clone https://github.com/sxlijin/plugins-fork3
