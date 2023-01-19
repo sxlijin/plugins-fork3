@@ -1,0 +1,14 @@
+name: push (lfs test)
+on: [push, workflow_dispatch]
+
+jobs:
+  macos:
+    name: test what happens when LFS missing
+    runs-on: macos-latest
+
+    steps:
+      - name: purge lfs
+        run: brew uninstall git-lfs
+
+      - name: checkout
+        run: git clone https://github.com/sxlijin/plugins-fork3
